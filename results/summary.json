@@ -1,0 +1,230 @@
+{
+  "data": {
+    "raw_rows": 1067371,
+    "clean_rows": 770397,
+    "reversed_lines_removed": 6180,
+    "customers": 4898,
+    "holdout_active_share": 0.5291955900367497
+  },
+  "pca": {
+    "n_components": 4,
+    "variance_explained": 0.8255927209482448
+  },
+  "segments": {
+    "k": 7,
+    "sizes": {
+      "S1": 914,
+      "S2": 562,
+      "S3": 294,
+      "S4": 289,
+      "S5": 640,
+      "S6": 1374,
+      "S7": 825
+    }
+  },
+  "cca": {
+    "canonical_correlations": [
+      0.672827862896587,
+      0.5721243357371465,
+      0.31603079973170034
+    ]
+  },
+  "manova": {
+    "pillai_trace": 0.25956527251786665,
+    "pillai_p": 3.05453448365135e-271,
+    "box_m_p": 0.0
+  },
+  "bgnbd": {
+    "params": {
+      "r": 0.6880437726824185,
+      "alpha": 9.595882986303996,
+      "a": 0.152004508389163,
+      "b": 3.1948150548728176
+    },
+    "mean_weekly_rate": 0.07170197611459508,
+    "mean_dropout_prob": 0.04541759886242916,
+    "holdout": {
+      "total_predicted": 7886.673555823958,
+      "total_actual": 8071,
+      "MAE": 1.0837134408005962,
+      "RMSE": 1.860848892945644,
+      "spearman": 0.629452298739012
+    }
+  },
+  "poisson_check": {
+    "customers_tested": 1846,
+    "share_more_regular_than_poisson": 0.22914409534127844,
+    "share_burstier_than_poisson": 0.029794149512459372
+  },
+  "markov_homogeneity": {
+    "first vs second half": {
+      "G2": 25.801270752992565,
+      "df": 7,
+      "p": 0.0005465450285528457
+    },
+    "Q4 vs Q1-Q3": {
+      "G2": 196.40574215374764,
+      "df": 7,
+      "p": 6.619914680308972e-39
+    }
+  },
+  "stochastic_comparison": {
+    "AUC: any holdout purchase": {
+      "BG/NBD": 0.8078,
+      "Markov chain": 0.7401
+    },
+    "Spearman with holdout purchase count": {
+      "BG/NBD": 0.6295,
+      "Markov chain": 0.5247
+    }
+  },
+  "logit_odds_ratios": {
+    "is_uk[T.True]": 1.0169,
+    "recency_months": 0.873,
+    "tenure_months": 0.9693,
+    "log_orders": 2.5027,
+    "log_aov": 1.2361,
+    "log_products": 1.124,
+    "log_avg_price": 0.8088,
+    "return_rate": 0.8274,
+    "q4_share": 1.0998
+  },
+  "ols": {
+    "r2": 0.5151493385966034,
+    "breusch_pagan_p": 2.75729044402152e-07,
+    "n_influential": 151
+  },
+  "retransformation": {
+    "naive exp(OLS)": 0.6138,
+    "OLS + smearing": 0.861,
+    "Gamma GLM": 0.8146
+  },
+  "mixed_model": {
+    "tau2": 0.0019722993780713982,
+    "sigma2": 0.7169925735895633,
+    "icc": 0.0027432485956239263,
+    "n_countries": 29
+  },
+  "spend_models": {
+    "Two-part GLM (cross-validated)": {
+      "total predicted / actual": 0.8287,
+      "MAE (\u00a3)": 678.6546,
+      "RMSE (\u00a3)": 3746.8405,
+      "Spearman": 0.6133,
+      "revenue captured by top 20%": 0.7561
+    },
+    "BG/NBD \u00d7 spend per occasion": {
+      "total predicted / actual": 0.8452,
+      "MAE (\u00a3)": 574.0008,
+      "RMSE (\u00a3)": 2471.7774,
+      "Spearman": 0.6251,
+      "revenue captured by top 20%": 0.7603
+    },
+    "Naive: calibration spend": {
+      "total predicted / actual": 2.5245,
+      "MAE (\u00a3)": 1556.2072,
+      "RMSE (\u00a3)": 6080.6634,
+      "Spearman": 0.5727,
+      "revenue captured by top 20%": 0.752
+    }
+  },
+  "sampling": {
+    "n": 500,
+    "true_mean": 911.324524295631,
+    "design_effect": {
+      "SRS: sample mean": 1.0,
+      "SRS: ratio estimator": 0.1969,
+      "SRS: regression estimator": 0.2516,
+      "Stratified: proportional": 0.9988,
+      "Stratified: Neyman (proxy S_h)": 0.2823,
+      "Stratified: Neyman (oracle S_h)": 0.2748
+    },
+    "ci_coverage_pct": {
+      "SRS: sample mean": 78.95,
+      "SRS: ratio estimator": 85.15,
+      "SRS: regression estimator": 78.45,
+      "Stratified: proportional": 78.6,
+      "Stratified: Neyman (proxy S_h)": 91.65,
+      "Stratified: Neyman (oracle S_h)": 92.4
+    },
+    "n_for_10pct_margin": {
+      "SRS: sample mean": 3523,
+      "SRS: ratio estimator": 1642,
+      "SRS: regression estimator": 1919,
+      "Stratified: proportional": 3522,
+      "Stratified: Neyman (proxy S_h)": 2055,
+      "Stratified: Neyman (oracle S_h)": 2023
+    }
+  },
+  "bootstrap_segment_value": {
+    "S1": {
+      "estimate": 149.11,
+      "boot_SE": 9.26,
+      "ci_lower": 131.88,
+      "ci_upper": 170.37,
+      "actual_mean_holdout_spend": 163.54
+    },
+    "S2": {
+      "estimate": 157.3,
+      "boot_SE": 12.54,
+      "ci_lower": 136.17,
+      "ci_upper": 183.27,
+      "actual_mean_holdout_spend": 158.01
+    },
+    "S3": {
+      "estimate": 538.57,
+      "boot_SE": 30.47,
+      "ci_lower": 478.89,
+      "ci_upper": 596.82,
+      "actual_mean_holdout_spend": 363.59
+    },
+    "S4": {
+      "estimate": 946.79,
+      "boot_SE": 157.34,
+      "ci_lower": 655.23,
+      "ci_upper": 1194.6,
+      "actual_mean_holdout_spend": 654.36
+    },
+    "S5": {
+      "estimate": 493.8,
+      "boot_SE": 18.47,
+      "ci_lower": 459.13,
+      "ci_upper": 529.41,
+      "actual_mean_holdout_spend": 454.33
+    },
+    "S6": {
+      "estimate": 770.46,
+      "boot_SE": 19.3,
+      "ci_lower": 736.05,
+      "ci_upper": 808.26,
+      "actual_mean_holdout_spend": 765.57
+    },
+    "S7": {
+      "estimate": 2033.7,
+      "boot_SE": 73.51,
+      "ci_lower": 1887.97,
+      "ci_upper": 2173.96,
+      "actual_mean_holdout_spend": 3135.42
+    }
+  },
+  "bgnbd_parametric_bootstrap": {
+    "se": {
+      "r": 0.01818,
+      "alpha": 0.32902,
+      "a": 0.04378,
+      "b": 1.53603
+    },
+    "total_purchases_interval": [
+      7736.77535745571,
+      8027.827490365126
+    ]
+  },
+  "recommendation": {
+    "ranking model": "BG/NBD \u00d7 spend per occasion",
+    "customers targeted (top 20%)": 980.0,
+    "share of holdout revenue from targeted customers": 0.7602778040242566,
+    "high-value customers flagged at risk (P(alive) < 0.5)": 37.0,
+    "share of at-risk high-value customers who did not return": 0.7837837837837838,
+    "calibration revenue of at-risk high-value customers (\u00a3)": 408037.97000000003
+  }
+}
